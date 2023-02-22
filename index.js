@@ -79,7 +79,9 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 
 
 function cesitEkle(tatlar){
-  let tatlar = ["Elmalı Turta"];
+  let tatlıEkle = "Elmalı Turta";
+  tatlar.unshift(tatlıEkle);
+  return tatlar;
 }
 
 
@@ -96,8 +98,9 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(tatlar) {
+  tatlar.pop();
+  return tatlar;
 }
 
 
@@ -112,9 +115,11 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
+function indekstekiCesitiGetir(tatlar, sayi) {
+  let cesitDondur = tatlar[sayi];
+  return(cesitDondur);
 }
+indekstekiCesitiGetir(orijinalTatlar, 4);
 
 
 /* Görev 6:
@@ -132,10 +137,12 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(tatlar, lezzet) {
+   let alinan = tatlar.indexOf(lezzet);
+   tatlar.splice(alinan, 1);
+   return(tatlar);
 }
-
+ismeGoreCesitCikar(orijinalTatlar, "Badem");
 
 /* Görev 7:
 
