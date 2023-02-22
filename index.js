@@ -40,10 +40,11 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(orijinalTatlar) {
-  let orijinalTatlarKopyala = [...orijinalTatlar];
+function kopyala(marketteNeVarsa) {
+  let orijinalTatlarKopyala = [...marketteNeVarsa];
   return orijinalTatlarKopyala;
 }
+console.log("Elif Alışverişte", kopyala(orijinalTatlar));
 
 
 
@@ -58,10 +59,11 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(orijinalTatlar){
-  let diziUzunluk = (orijinalTatlar.length === 25)
+function dizi25Cesitmi(orijinalTatlariSay){
+  let diziUzunluk = (orijinalTatlariSay.length === 25)
   return diziUzunluk;
   }
+ console.log(dizi25Cesitmi(orijinalTatlar));
   
 
 
@@ -79,7 +81,7 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 
 
 function cesitEkle(tatlar){
-  let tatlıEkle = "Elmalı Turta";
+  let tatlıEkle = "Kakule";
   tatlar.unshift(tatlıEkle);
   return tatlar;
 }
@@ -98,7 +100,7 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(tatlar) {
+function sonCesitiKaldir(tatlar){
   tatlar.pop();
   return tatlar;
 }
@@ -115,8 +117,8 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(tatlar, sayi) {
-  let cesitDondur = tatlar[sayi];
+function indekstekiCesitiGetir(tatlar, sayi3){
+  let cesitDondur = tatlar[sayi3];
   return(cesitDondur);
 }
 indekstekiCesitiGetir(orijinalTatlar, 4);
@@ -137,7 +139,7 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(tatlar, lezzet) {
+function ismeGoreCesitCikar(tatlar, lezzet){
    let alinan = tatlar.indexOf(lezzet);
    tatlar.splice(alinan, 1);
    return(tatlar);
@@ -165,9 +167,20 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
+function ismeGoreFiltrele(marketRafi, filtrelenecek) {
   /*kod buraya*/
+  let sepet = [];
+  for (let i = 0; i < marketRafi.length; i++) {
+    let elimdekiAbur = marketRafi[i];
+    if (elimdekiAbur.includes(filtrelenecek)) {
+      sepet.push(elimdekiAbur);
+    }
+  }
+  console.log("Sepet", sepet);
+  return sepet;
 }
+//console.log("yeniDizi", yeniDizi);
+ismeGoreFiltrele(orijinalTatlar, "Çikolata");
 
 
 
